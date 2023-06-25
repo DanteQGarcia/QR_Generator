@@ -1,0 +1,35 @@
+package Componentes;
+
+import javax.swing.JTextField;
+
+public class TextFieldSuggestion extends JTextField {
+
+    private TextFieldSuggestionUI textUI;
+
+    public TextFieldSuggestion() {
+        textUI = new TextFieldSuggestionUI(this);
+        setUI(textUI);
+        setFont(new java.awt.Font("Roboto", 0, 16)); 
+    }
+
+    public void addItemSuggestion(String text) {
+        textUI.getItems().add(text);
+    }
+
+    public void removeItemSuggestion(String text) {
+        textUI.getItems().remove(text);
+    }
+
+    public void clearItemSuggestion() {
+        textUI.getItems().clear();
+    }
+
+    public void setRound(int round) {
+        textUI.setRound(round);
+    }
+
+    public int getRound() {
+        return textUI.getRound();
+    }
+
+}
